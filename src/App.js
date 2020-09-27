@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {Switch, Route, withRouter} from 'react-router-dom'
+import './App.scss'; 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// pages 
+import Container  from './pages/container';
+import Admin from './pages/admin-login';
+import CreateBlog from './pages/create-blog';
+
+// components 
+import Header from './components/header';
+import Footer from './components/footer';
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <React.StrictMode>
+          <Switch>
+            <Route exact path="/admin-login" component={Admin} />
+            <Route exact path="/create-blog" component={CreateBlog} />
+            <Route path="/" component={Container} />
+          </Switch>
+        </React.StrictMode>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
