@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Switch, Route, withRouter} from 'react-router-dom'
+import {Switch, Route, withRouter} from 'react-router-dom';
 import './App.scss'; 
+import 'medium-draft/lib/index.css';
 
 // pages 
 import Container  from './pages/container';
