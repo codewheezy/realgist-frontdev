@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-const DialogNav = ({close}) => {
+const DialogNavs = ({close}) => {
     return (
     <div className="dialog-overlay">
         <div className="dialog dialog-nav">
@@ -28,4 +28,4 @@ const DialogNav = ({close}) => {
     );
 }
 
-export default DialogNav;
+export default DialogNavs;
